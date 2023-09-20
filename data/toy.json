@@ -1,0 +1,82 @@
+[
+    {
+    "_id": "t101",
+    "name": "Talking Doll",
+    "price": 123,
+    "labels": ["Doll", "Battery", "Powered", "Baby"],
+    "createdAt": 1631031801011,
+    "inStock": true
+    },
+    {
+        "_id": "t102",
+        "name": "Talking Baby",
+        "price": 485,
+        "labels": ["Baby", "Battery Powered", "Puzzle"],
+        "createdAt": 1631031801358,
+        "inStock": false
+    },
+    {
+        "_id": "t103",
+        "name": "Little Truck",
+        "price": 436,
+        "labels": ["Box game", "Outdoor", "Puzzle"],
+        "createdAt": 16310318013002,
+        "inStock": false
+    },
+    {
+        "_id": "t104",
+        "name": "Papi dog",
+        "price": 5765,
+        "labels": ["Baby", "Doll", "Art"],
+        "createdAt": 1631031801312,
+        "inStock": false
+    },
+    {
+        "_id": "t105",
+        "name": "cute bear",
+        "price": 234,
+        "labels": ["Baby", "On wheels", "Puzzle"],
+        "createdAt": 1631031801498,
+        "inStock": true
+    },
+    {
+        "_id": "t106",
+        "name": "big lion",
+        "price": 33,
+        "labels": ["Doll", "On wheels", "Art"],
+        "createdAt": 1631031801424,
+        "inStock": true
+    },
+    {
+        "_id": "t107",
+        "name": "Airoman",
+        "price": 876,
+        "labels": ["Battery Powered", "On wheels", "Outdoor"],
+        "createdAt": 1631031801963,
+        "inStock": false
+    },
+    {
+        "_id": "t108",
+        "name": "King kong",
+        "price": 346,
+        "labels": ["Baby", "On wheels", "Puzzle"],
+        "createdAt": 1631031801852,
+        "inStock": true
+    },
+    {
+        "_id": "t109",
+        "name": "Joker",
+        "price": 765,
+        "labels": ["Box game", "On wheels", "Doll"],
+        "createdAt": 1631031801498,
+        "inStock": false
+    },
+    {
+        "_id": "t110",
+        "name": "Harlly Queen",
+        "price": 323,
+        "labels": ["Baby", "On wheels", "Battery Powered"],
+        "createdAt": 1631031801741,
+        "inStock": true
+    }
+]
