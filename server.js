@@ -3,8 +3,8 @@ import { fileURLToPath } from 'url';
 import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
-import { toyService } from './services/toy.service';
-import { loggerService } from './services/logger.service';
+import { loggerService } from '../backend/services/logger.service.js'
+import { toyService } from '../backend/services/toy.service.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express()
@@ -60,12 +60,14 @@ app.post('/api/toy', (req, res) => {
 app.put('/api/toy', (req, res) => {
    
 
-    const {_id, txt:name, labels, inStock } = req.body
+    const {_id,name,labels,price,createdAt,inStock } = req.body
     const toy = {
         _id,
         name,
         labels,
-        inStock,
+        price,
+        createdAt,
+        inStock
     }
     toyService.save(toy)
     .then(savedToy => {
