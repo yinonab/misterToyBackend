@@ -1,6 +1,8 @@
 [
     {
         "_id": "t101",
+        "name": "Talking Baby bear",
+        "price": 484445,
         "labels": [
             "Doll",
             "Battery",
@@ -105,26 +107,5 @@
         ],
         "createdAt": 1631031801741,
         "inStock": true
-    },
-    {
-        "labels": [
-            "Babcccy",
-            "Battery Powered",
-            "Puzzle"
-        ],
-        "inStock": false,
-        "_id": "Y4Qacd"
-    },
-    {
-        "price": 123,
-        "_id": "UDObZR"
-    },
-    {
-        "price": 12333,
-        "_id": "dG7wpz"
-    },
-    {
-        "price": 333485,
-        "_id": "bffrzs"
     }
 ]

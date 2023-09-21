@@ -3,10 +3,10 @@ import { fileURLToPath } from 'url';
 import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
-import { loggerService } from '../backend/services/logger.service.js'
-import { toyService } from '../backend/services/toy.service.js'
+import { loggerService } from './services/logger.service.js'
+import { toyService } from './services/toy.service.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url))
 const app = express()
 
 const corsOptions = {
@@ -15,6 +15,7 @@ const corsOptions = {
         'http://localhost:8080',
         'http://127.0.0.1:5173',
         'http://localhost:5173',
+
     ],
     credentials: true
 }
@@ -32,6 +33,7 @@ app.get('/api/toy', (req, res) => {
     const filterBy = { txt, labels,inStock, pageIdx }
     toyService.query(filterBy)
         .then(toys => {
+            console.log('toys', toys)
             res.send(toys)
         })
         .catch(err => {
@@ -112,7 +114,7 @@ app.get('/**', (req, res) => {
 
 
 // Listen will always be the last line in our server!
-const port = 3030
+const port = process.env.PORT || 3030
 app.listen(port, () => {
     loggerService.info(`Server listening on port http://127.0.0.1:${port}/`)
 })

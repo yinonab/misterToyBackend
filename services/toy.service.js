@@ -20,10 +20,10 @@ export const toyService = {
 
 
 function query(filterBy = {}) {
-    console.log('Received filterBy:', filterBy);
+    // console.log('Received filterBy:', filterBy);
 
     let toyToDisplay = toys;
-    console.log('toyToDisplay txt', toyToDisplay);
+    // console.log('toyToDisplay txt', toyToDisplay);
 
     if (filterBy.txt) {
         const regExp = new RegExp(filterBy.txt, 'i');
@@ -44,7 +44,7 @@ function query(filterBy = {}) {
             return false; // Return false if 'labels' is not an array
         });
     }
-
+    console.log('toyToDisplay', toyToDisplay)
     return Promise.resolve(toyToDisplay);
 }
 
