@@ -20,32 +20,34 @@ export const toyService = {
 
 
 function query(filterBy = {}) {
-    console.log('hi');
+    console.log('Received filterBy:', filterBy);
 
-    let toyToDisplay = toys
-    console.log('toyToDisplay txt', toyToDisplay)
+    let toyToDisplay = toys;
+    console.log('toyToDisplay txt', toyToDisplay);
 
     if (filterBy.txt) {
-        const regExp = new RegExp(filterBy.txt, 'i')
-        toyToDisplay = toyToDisplay.filter(toy => regExp.test(toy.name))
-        console.log('toyToDisplay txt', toyToDisplay)
+        const regExp = new RegExp(filterBy.txt, 'i');
+        toyToDisplay = toyToDisplay.filter(toy => regExp.test(toy.name));
+        console.log('toyToDisplay txt', toyToDisplay);
     }
     if (filterBy.inStock !== undefined) {
-        if (filterBy.inStock === true) {
-            toyToDisplay = toyToDisplay.filter(toy => toy.inStock === true)
-        } else if (filterBy.inStock === false) {
-            toyToDisplay = toyToDisplay.filter(toy => toy.inStock === false)
-        }
+        // Convert filterBy.inStock to a boolean if it's a string
+        const inStockFilter = filterBy.inStock === 'true' ? true : filterBy.inStock === 'false' ? false : filterBy.inStock;
+        toyToDisplay = toyToDisplay.filter(toy => toy.inStock === inStockFilter);
     }
     if (filterBy.labels && filterBy.labels.length > 0) {
         toyToDisplay = toyToDisplay.filter(toy => {
-            return toy.labels.some(label => filterBy.labels.includes(label));
+            // Check if 'labels' is an array before using 'some'
+            if (Array.isArray(toy.labels)) {
+                return toy.labels.some(label => filterBy.labels.includes(label));
+            }
+            return false; // Return false if 'labels' is not an array
         });
     }
 
-
-    return Promise.resolve(toyToDisplay)
+    return Promise.resolve(toyToDisplay);
 }
+
 
 
 
