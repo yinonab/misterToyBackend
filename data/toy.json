@@ -85,18 +85,6 @@
         "inStock": true
     },
     {
-        "_id": "t109",
-        "name": "Joker",
-        "price": 765,
-        "labels": [
-            "Box game",
-            "On wheels",
-            "Doll"
-        ],
-        "createdAt": 1631031801498,
-        "inStock": false
-    },
-    {
         "_id": "t110",
         "name": "Harlly Queen",
         "price": 323,
@@ -107,5 +95,56 @@
         ],
         "createdAt": 1631031801741,
         "inStock": true
+    },
+    {
+        "labels": [
+            "Puzzle",
+            "Outdoor",
+            "Art"
+        ],
+        "inStock": true,
+        "price": 8018,
+        "_id": "TXr33K"
+    },
+    {
+        "labels": [
+            "Art",
+            "Art",
+            "Baby"
+        ],
+        "inStock": true,
+        "price": 3192,
+        "_id": "c14zKT"
+    },
+    {
+        "labels": [
+            "Outdoor",
+            "Art",
+            "Puzzle"
+        ],
+        "inStock": true,
+        "price": 6950,
+        "_id": "fgGNw5"
+    },
+    {
+        "labels": [
+            "On wheels",
+            "Puzzle",
+            "Puzzle"
+        ],
+        "inStock": true,
+        "price": 6398,
+        "_id": "Thv2Rn"
+    },
+    {
+        "name": "port",
+        "labels": [
+            "Doll",
+            "On wheels",
+            "On wheels"
+        ],
+        "inStock": true,
+        "price": 1944,
+        "_id": "IVuipA"
     }
 ]
