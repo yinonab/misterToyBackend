@@ -77,7 +77,7 @@ function save(toy) {
         toyToUpdate.price = toy.price
     } else {
         toy._id = utilService.makeId()
-        toys.push(toy)
+        toys.unshift(toy)
     }
     return _saveToysToFile().then(() => toy)
 }
