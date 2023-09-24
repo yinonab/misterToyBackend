@@ -1,5 +1,27 @@
 [
     {
+        "name": "Hawkeye",
+        "labels": [
+            "Baby",
+            "Doll",
+            "Outdoor"
+        ],
+        "inStock": false,
+        "price": 4218,
+        "_id": "2a3n4J"
+    },
+    {
+        "name": "Etrigan the Demon",
+        "labels": [
+            "Box game",
+            "Puzzle",
+            "Doll"
+        ],
+        "inStock": false,
+        "price": 5060,
+        "_id": "7b4BUL"
+    },
+    {
         "_id": "t101",
         "name": "Talking Baby bear",
         "price": 484445,
