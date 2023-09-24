@@ -29,8 +29,8 @@ app.use(express.static('public'))
 
 //List
 app.get('/api/toy', (req, res) => {
-    const { txt, labels, inStock,createdAt, pageIdx} = req.query
-    const filterBy = { txt, labels,inStock, pageIdx }
+    const { txt, labels, inStock,createdAt,icon, pageIdx} = req.query
+    const filterBy = { txt, labels,inStock,createdAt,icon, pageIdx }
     toyService.query(filterBy)
         .then(toys => {
             console.log('toys', toys)
@@ -43,12 +43,12 @@ app.get('/api/toy', (req, res) => {
 })
 //add
 app.post('/api/toy', (req, res) => {
-    const { name,price, labels, inStock,createdAt } = req.body
+    const { name,price, labels, inStock,createdAt,icon } = req.body
     const toy = {
         name,
         labels,
         inStock,
-        price,createdAt
+        price,createdAt,icon
     }
     toyService.save(toy)
         .then(savedToy => {
