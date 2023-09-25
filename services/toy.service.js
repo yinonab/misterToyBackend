@@ -74,6 +74,7 @@ function remove(toyId) {
 function save(toy) {
     if (toy._id) {
         const toyToUpdate = toys.find(currToy => currToy._id === toy._id)
+        toyToUpdate.name = toy.name
         toyToUpdate.price = toy.price
     } else {
         toy._id = utilService.makeId()
