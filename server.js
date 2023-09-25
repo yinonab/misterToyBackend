@@ -63,14 +63,14 @@ app.post('/api/toy', (req, res) => {
 app.put('/api/toy', (req, res) => {
    
 
-    const {_id,name,labels,price,createdAt,inStock } = req.body
+    const {_id,name,labels,price,createdAt,inStock,icon } = req.body
     const toy = {
         _id,
         name,
         labels,
         price,
         createdAt,
-        inStock
+        inStock,icon
     }
     toyService.save(toy)
     .then(savedToy => {
