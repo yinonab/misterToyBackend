@@ -76,6 +76,7 @@ function save(toy) {
         const toyToUpdate = toys.find(currToy => currToy._id === toy._id)
         toyToUpdate.name = toy.name
         toyToUpdate.price = toy.price
+        toyToUpdate.inStock = toy.inStock
     } else {
         toy._id = utilService.makeId()
         toys.unshift(toy)
