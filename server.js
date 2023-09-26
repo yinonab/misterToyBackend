@@ -29,8 +29,8 @@ app.use(express.static('public'))
 
 //List
 app.get('/api/toy', (req, res) => {
-    const { txt, labels, inStock,createdAt,icon, pageIdx} = req.query
-    const filterBy = { txt, labels,inStock,createdAt,icon, pageIdx }
+    const { txt, labels, inStock, createdAt, icon, pageIdx } = req.query
+    const filterBy = { txt, labels, inStock, createdAt, icon, pageIdx }
     toyService.query(filterBy)
         .then(toys => {
             console.log('toys', toys)
@@ -43,12 +43,12 @@ app.get('/api/toy', (req, res) => {
 })
 //add
 app.post('/api/toy', (req, res) => {
-    const { name,price, labels, inStock,createdAt,icon } = req.body
+    const { name, price, labels, inStock, createdAt, icon } = req.body
     const toy = {
         name,
         labels,
         inStock,
-        price,createdAt,icon
+        price, createdAt, icon
     }
     toyService.save(toy)
         .then(savedToy => {
@@ -61,25 +61,25 @@ app.post('/api/toy', (req, res) => {
 })
 ///edit
 app.put('/api/toy', (req, res) => {
-   
 
-    const {_id,name,labels,price,createdAt,inStock,icon } = req.body
+
+    const { _id, name, labels, price, createdAt, inStock, icon } = req.body
     const toy = {
         _id,
         name,
         labels,
         price,
         createdAt,
-        inStock,icon
+        inStock, icon
     }
     toyService.save(toy)
-    .then(savedToy => {
-        res.send(savedToy)
-    })
-    .catch(err => {
-        loggerService.error('Cannot add toy', err)
-        res.status(400).send('Cannot add toy')
-    })
+        .then(savedToy => {
+            res.send(savedToy)
+        })
+        .catch(err => {
+            loggerService.error('Cannot add toy', err)
+            res.status(400).send('Cannot add toy')
+        })
 })
 
 // Read - getById

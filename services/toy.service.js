@@ -36,12 +36,12 @@ function query(filterBy = {}) {
     //     toyToDisplay = toyToDisplay.filter(toy => toy.inStock === inStockFilter)
     // }
     if (filterBy.inStock !== undefined) {
-            if (filterBy.inStock === 'true') {
-                toyToDisplay = toyToDisplay.filter(toy => toy.inStock === true)
-            } else if (filterBy.inStock === 'false') {
-                toyToDisplay = toyToDisplay.filter(toy => toy.inStock === false)
-            }
+        if (filterBy.inStock === 'true') {
+            toyToDisplay = toyToDisplay.filter(toy => toy.inStock === true)
+        } else if (filterBy.inStock === 'false') {
+            toyToDisplay = toyToDisplay.filter(toy => toy.inStock === false)
         }
+    }
     if (filterBy.labels && filterBy.labels[0]) {
         toyToDisplay = toyToDisplay.filter(toy => toy.labels.some(label => filterBy.labels.includes(label)))
     }
