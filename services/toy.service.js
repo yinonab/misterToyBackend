@@ -20,20 +20,20 @@ export const toyService = {
 
 
 function query(filterBy = {}) {
-    // console.log('Received filterBy:', filterBy);
+    // console.log('Received filterBy:', filterBy)
 
-    let toyToDisplay = toys;
-    // console.log('toyToDisplay txt', toyToDisplay);
+    let toyToDisplay = toys
+    // console.log('toyToDisplay txt', toyToDisplay)
 
     if (filterBy.txt) {
-        const regExp = new RegExp(filterBy.txt, 'i');
-        toyToDisplay = toyToDisplay.filter(toy => regExp.test(toy.name));
-        console.log('toyToDisplay txt', toyToDisplay);
+        const regExp = new RegExp(filterBy.txt, 'i')
+        toyToDisplay = toyToDisplay.filter(toy => regExp.test(toy.name))
+        console.log('toyToDisplay txt', toyToDisplay)
     }
     // if (filterBy.inStock !== undefined) {
     //     // Convert filterBy.inStock to a boolean if it's a string
-    //     const inStockFilter = filterBy.inStock === 'true' ? true : filterBy.inStock === 'false' ? false : filterBy.inStock;
-    //     toyToDisplay = toyToDisplay.filter(toy => toy.inStock === inStockFilter);
+    //     const inStockFilter = filterBy.inStock === 'true' ? true : filterBy.inStock === 'false' ? false : filterBy.inStock
+    //     toyToDisplay = toyToDisplay.filter(toy => toy.inStock === inStockFilter)
     // }
     if (filterBy.inStock !== undefined) {
             if (filterBy.inStock === 'true') {
@@ -46,14 +46,14 @@ function query(filterBy = {}) {
         toyToDisplay = toyToDisplay.filter(toy => toy.labels.some(label => filterBy.labels.includes(label)))
     }
     console.log('toyToDisplay', toyToDisplay)
-    return Promise.resolve(toyToDisplay);
+    return Promise.resolve(toyToDisplay)
 }
 
 
 
 
 function get(toyId) {
-    const toy = toys.find(toy => toy._id === toyId);
+    const toy = toys.find(toy => toy._id === toyId)
     if (!toy) return Promise.reject('Toy not found')
     return Promise.resolve(toy)
 }
@@ -61,7 +61,7 @@ function get(toyId) {
 
 
 function remove(toyId) {
-    const idx = toys.findIndex(toy => toy._id === toyId);
+    const idx = toys.findIndex(toy => toy._id === toyId)
     if (idx === -1) return Promise.reject('no such toy')
     toys.splice(idx, 1)
     // return Promise.reject('Not now!')
@@ -88,7 +88,7 @@ function save(toy) {
 
 
 // function getDefaultFilter() {
-//     return { txt: '', labels: [], inStock: undefined, pageIdx: 0 };
+//     return { txt: '', labels: [], inStock: undefined, pageIdx: 0 }
 // }
 
 
@@ -100,11 +100,11 @@ function _saveToysToFile() {
         const toysStr = JSON.stringify(toys, null, 4)
         fs.writeFile('data/toy.json', toysStr, (err) => {
             if (err) {
-                return console.log(err);
+                return console.log(err)
             }
-            console.log('The file was saved!');
+            console.log('The file was saved!')
             resolve()
-        });
+        })
     })
 }
 
